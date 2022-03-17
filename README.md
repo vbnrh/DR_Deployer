@@ -13,12 +13,16 @@ The following steps are performed:
 
 # Using the Script 
 
+1. Download a suitable version of openshift-install and place it in the same directory as the script 
 1. Create a file pull-secret.txt and add your pull secret credentials to it
-2. Run the following command to create the hub cluster, spoke cluster and add the spoke to the hub
+1. Run the following command to create the hub cluster, spoke cluster and add the spoke to the hub
 ```
 ./create-dr-clusters.sh -am 
 ```
-3. Once done with the usage. You can delete the hub and spoke clusters using the following command
+
+# Cleanup 
+
+Once done with the usage. You can delete the hub and spoke clusters using the following command
 ```
 ./create-dr-clusters.sh -c 
 ```
