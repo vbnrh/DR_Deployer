@@ -16,6 +16,8 @@ The following steps are performed:
 1. Download a suitable version of openshift-install and place it in the same directory as the script 
 1. Create a file pull-secret.txt and add your pull secret credentials to it
 1. Run the following command to create the hub cluster, spoke cluster and add the spoke to the hub
+1. It will take around 45 minutes to complete
+1. Once completed, please proceed with installing submariner addons from the ACM Perspective on hub cluster
 ```
 ./create-dr-clusters.sh -am 
 ```
