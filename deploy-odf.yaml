@@ -1,0 +1,42 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: odf-catalogsource
+  namespace: openshift-marketplace
+spec:
+  displayName: Openshift Data Foundation
+  # TODO Use downstream builds 
+  image: quay.io/vbnrh/odf-operator-catalog:latest
+  publisher: Red Hat
+  sourceType: grpc
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: openshift-storage
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  generateName: openshift-storage-
+  namespace: openshift-storage
+spec:
+  targetNamespaces:
+  - openshift-storage
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  labels:
+    operators.coreos.com/odf-operator.openshift-storage: ''
+  name: odf-operator
+  namespace: openshift-storage
+spec:
+  channel: alpha
+  installPlanApproval: Automatic
+  name: odf-operator
+  source: odf-catalogsource
+  sourceNamespace: openshift-marketplace
+  startingCSV: odf-operator.v4.10.0
+---
+
