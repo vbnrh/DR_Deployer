@@ -31,7 +31,7 @@ spec:
     - config: {}
       resources: {}
       placement: {}
-      name: ocs-deviceset-gp2
+      name: ocs-deviceset-gp3
       dataPVCTemplate:
         metadata: {}
         spec:
@@ -40,7 +40,7 @@ spec:
           resources:
             requests:
               storage: 512Gi
-          storageClassName: gp2
+          storageClassName: gp3-csi
           volumeMode: Block
         status: {}
       count: 1

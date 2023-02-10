@@ -72,8 +72,8 @@ function create-hub-cluster {
 	kubectl create -f multiclusterhub.yaml
 	label-nodes
 	kubectl create -f deploy-odf.yaml
-	oc create -f https://raw.githubusercontent.com/red-hat-storage/volume-replication-operator/main/config/crd/bases/replication.storage.openshift.io_volumereplications.yaml
-  oc create -f https://raw.githubusercontent.com/red-hat-storage/volume-replication-operator/main/config/crd/bases/replication.storage.openshift.io_volumereplicationclasses.yaml
+	# oc create -f https://raw.githubusercontent.com/red-hat-storage/volume-replication-operator/main/config/crd/bases/replication.storage.openshift.io_volumereplications.yaml
+  # oc create -f https://raw.githubusercontent.com/red-hat-storage/volume-replication-operator/main/config/crd/bases/replication.storage.openshift.io_volumereplicationclasses.yaml
 	sleep 1m
 	kubectl create -f storagesystem.yaml
 	oc create namespace odfmo-system

@@ -1,30 +1,18 @@
-# Introduction
+# OpenShift Install
 
-The `create-dr-clusters.sh` script is a utility tools for setting up a complete DR setup barring the installation of submariner addons
-It will create two clusters and deploy the neccessary dependencies to them.
-The following steps are performed:
+The OpenShift installer `openshift-install` makes it easy to get a cluster
+running on the public cloud or your local infrastructure.
 
-1. Creates Hub and Spoke clusters
-2. Installs ODF on both Clusters 
-3. Label nodes and create StorageSystem
-4. Deploy ACM on Hub cluster and create a multiclusterhub
-5. Add the created spoke cluster to Hub
+To learn more about installing OpenShift, visit [docs.openshift.com](https://docs.openshift.com)
+and select the version of OpenShift you are using.
 
+## Installing the tools
 
-# Using the Script 
+After extracting this archive, you can move the `openshift-install` binary
+to a location on your PATH such as `/usr/local/bin`, or keep it in a temporary
+directory and reference it via `./openshift-install`.
 
-1. Download a suitable version of openshift-install and place it in the same directory as the script 
-1. Create a file pull-secret.txt and add your pull secret credentials to it
-1. Run the following command to create the hub cluster, spoke cluster and add the spoke to the hub
-1. It will take around 45 minutes to complete
-1. Once completed, please proceed with installing submariner addons from the ACM Perspective on hub cluster
-```
-./create-dr-clusters.sh -am 
-```
+## License
 
-# Cleanup 
-
-Once done with the usage. You can delete the hub and spoke clusters using the following command
-```
-./create-dr-clusters.sh -c 
-```
+OpenShift is licensed under the Apache Public License 2.0. The source code for this
+program is [located on github](https://github.com/openshift/installer).
