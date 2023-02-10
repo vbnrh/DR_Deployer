@@ -6,6 +6,8 @@ running on the public cloud or your local infrastructure.
 To learn more about installing OpenShift, visit [docs.openshift.com](https://docs.openshift.com)
 and select the version of OpenShift you are using.
 
+For dev preview versions of openshift install. Visit https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp-dev-preview/
+
 ## Installing the tools
 
 After extracting this archive, you can move the `openshift-install` binary
